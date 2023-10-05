@@ -62,3 +62,68 @@ Na representação do cliente, o objeto é composto por outras propriedades de d
 Sabendo disso, analise as afirmações abaixo e selecione a alternativa verdadeira:
 O cliente possui uma propriedade chamada animalEstimacao, um array de objetos, o que nos permite usar funções comuns a arrays como filter().
 É isso mesmo! Um objeto pode conter um array de objetos, o que nos permite invocar desde funções comuns até arrays como filter().
+
+4)Nas aulas anteriores aprendemos que o JavaScript traz uma série de métodos próprios que nos ajudam a trabalhar com objetos. 
+Um exemplo disso é o método for … In que permite a iteração sobre as propriedades de um objeto como em um array. Sabendo disso, observe o código que define um objeto do tipo paciente:
+
+const paciente = {
+ nome: "James T.",
+ idade:30,
+ email: "jt@email.com",
+ identicacao: "Alpha01259859",
+ funcao:"comandante",
+ peso:80.1,
+ altura:1.80,
+ calcularIMC:function(){
+       return (this.peso/(Math.pow(this.altura,2)))
+ },
+ nomeCompleto:function(){
+   console.log(this.nome)
+ }
+}
+
+Posso utilizar o método for..In como loop e exibir somente as propriedades do objeto que não são classificadas como objetos ou funções, como no código abaixo:
+
+let dados = "";
+for (let info in paciente) {
+if (typeof paciente[info] === "object" || typeof paciente[info] === "function") {
+  continue
+} else {
+ dados += `${info} ==> ${paciente[info]}
+  `}
+};
+
+Agora analise as opções abaixo e marque as verdadeiras:
+
+Posso utilizar o método for..In como loop e exibir somente as propriedades do objeto que não são classificadas como objetos ou funções, como no código abaixo:
+
+let dados = "";
+for (let info in paciente) {
+if (typeof paciente[info] === "object" || typeof paciente[info] === "function") {
+  continue
+} else {
+ dados += `${info} ==> ${paciente[info]}
+  `}
+};
+Posso utilizar o método for..In como loop e exibir somente as propriedades do objeto que não são classificadas como objetos ou funções, como no código abaixo:
+
+let dados = "";
+for (let info in paciente) {
+if (typeof paciente[info] === "object" || typeof paciente[info] === "function") {
+  continue
+} else {
+ dados += `${info} ==> ${paciente[info]}
+  `}
+};
+
+O for...in permite iterar sobre as propriedades de um objeto. No caso desse loop, temos a flexibilidade de percorrer o objeto e executar uma série de comparações, 
+uma delas é usar o typeof e verificar o tipo da propriedade.
+
+Para manipular as propriedades do objeto cliente usando o JavaScript é necessário criar uma função e salvar em uma propriedade. Podemos fazer isso da seguinte forma:
+const paciente = {
+  ... // outros campos
+  alteraCampo: function (campo, valor) {
+    this[campo] = valor;
+  },
+};
+
