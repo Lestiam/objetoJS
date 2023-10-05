@@ -1,0 +1,23 @@
+1)No JavaScript, vimos que objetos são estruturas de dados compostas por chave e valor, informações que ajudam a representar algo da vida real ou um conjunto de 
+informações que faz sentido quando agrupado. Observe a representação abaixo:
+
+const pet = {
+  nome: "Rex",
+  dataDeNascimento: "12/03/2017",
+  brinquedoFavorito: "bolinha",
+  cor: "cinza",
+};
+
+Ao tentar acessar pet.dataDeNascimento iremos obter a string ”12/03/2017”.
+Podemos usar o operador . para acessar as propriedades que já conhecemos de um objeto.
+
+Ao tentar acessar pet[“brinquedoFavorito”] iremos obter a string ”bolinha”.
+Podemos utilizar o nome da propriedade como string dentro de colchetes [“propriedade”] para acessar as propriedades de um objeto de forma mais dinâmica.
+
+2)Usando a representação do objeto pessoa, foi solicitado que adicionássemos os campos seguro social e cpf no formato string. Além disso, quando forem exibidas as informações
+ da pessoa em um relatório, deverão aparecer somente os 4 primeiros dígitos do CPF e da carteira de identidade.
+Para adicionar as novas propriedades precisamos somente informar o novo campo e o seu valor, ou seja,pessoa.cpf="15346626522-65" e pessoa.seguroSocial="854321985-9" .
+Para exibir os 4 primeiros dígitos da identidade e CPF, podemos chamar uma função de string chamada substring() e passar início e o fim da string que queremos 
+como pessoa.cpf.substring(0,4).
+É isso mesmo! Podemos usar a notação de ponto para adicionar novos campos a objetos já criados, lembrando de iniciar o campo adicionado. Como os campos identidade
+ e CPF são do tipo string, podemos invocar o método substring() passando para a função a faixa da string que queremos retornar.
