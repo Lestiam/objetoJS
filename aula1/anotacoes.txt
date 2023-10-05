@@ -21,3 +21,44 @@ Para exibir os 4 primeiros dígitos da identidade e CPF, podemos chamar uma fun�
 como pessoa.cpf.substring(0,4).
 É isso mesmo! Podemos usar a notação de ponto para adicionar novos campos a objetos já criados, lembrando de iniciar o campo adicionado. Como os campos identidade
  e CPF são do tipo string, podemos invocar o método substring() passando para a função a faixa da string que queremos retornar.
+
+ Observe:
+ const objPersonagem = {
+ nome: "Gandalf",
+ classe: "mago",
+ nivel: "20"
+}
+
+const objPersonagem2 = Object.create(objPersonagem)
+objPersonagem2.nome = "Gandalf, o Cinzento"
+
+console.log(objPersonagem.nome) //Gandalf
+console.log(objPersonagem2.nome) //Gandalf, o Cinzento
+
+O método Object.create() cria um novo objeto utilizando como protótipo o objeto passado via parâmetro. Dessa forma, objPersonagem2 é uma instância diferente de objPersonagem e 
+pode ser trabalhada de forma independente.
+
+3)Trabalhar com objetos no Javascript permite que utilizemos diversos tipos de dados, desde primitivos (string, number, bool) até tipos mais elaborados como arrays ou outros objetos.
+ Observe o código abaixo:
+
+ const cliente = {
+ nome: "Jose",
+ idade:33,
+ email: "jose@email.com",
+ telefones: ["+550033338888", "+550033334444"]
+}
+ cliente.animalEstimacao = [{
+ nome: "Kripto",
+ raça: "Cão",
+ vacinado: true
+}]
+ cliente.animalEstimacao.push({
+ nome: "Lex",
+ raça: "Gato",
+ vacinado: false
+})
+
+Na representação do cliente, o objeto é composto por outras propriedades de diversos tipos e objetos.
+Sabendo disso, analise as afirmações abaixo e selecione a alternativa verdadeira:
+O cliente possui uma propriedade chamada animalEstimacao, um array de objetos, o que nos permite usar funções comuns a arrays como filter().
+É isso mesmo! Um objeto pode conter um array de objetos, o que nos permite invocar desde funções comuns até arrays como filter().
